@@ -1,4 +1,4 @@
-package Day1.Exercises1.Ex1;
+package Exercises1.Ex1;
 
 public class HinhVuong implements HinhHoc{
     private double canh = 0;
@@ -32,5 +32,12 @@ public class HinhVuong implements HinhHoc{
     @Override
     public double tinhDienTich() {
         return canh * canh;
+    }
+
+    @Override
+    public String toString() {
+        return "HinhVuong{" +
+                "canh=" + canh +
+                '}';
     }
 }

@@ -1,4 +1,4 @@
-package Day1.Exercises1.Ex1;
+package Exercises1.Ex1;
 
 public interface HinhHoc {
     double tinhChuVi();

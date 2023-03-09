@@ -1,7 +1,7 @@
-package Day1.Exercises1.Ex1;
+package Exercises1.Ex1;
 
 public class HinhTron implements HinhHoc{
-    private double banKinh = 0;
+    private double banKinh = 1.0;
 
     public HinhTron() {
     }
@@ -32,5 +32,12 @@ public class HinhTron implements HinhHoc{
     @Override
     public double tinhDienTich() {
         return Math.PI * banKinh * banKinh;
+    }
+
+    @Override
+    public String toString() {
+        return "HinhTron{" +
+                "banKinh=" + banKinh +
+                '}';
     }
 }

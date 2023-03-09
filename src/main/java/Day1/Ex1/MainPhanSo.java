@@ -1,6 +1,6 @@
 package Day1.Ex1;
 
-public class MainPhanSo {
+public class MainPhanSo { //test PhanSo
     public static void main(String[] args) {
         PhanSo p1 = new PhanSo(3,4);//phan so thu nhat
         PhanSo p2 = new PhanSo(7,4); //phan so thu 2
