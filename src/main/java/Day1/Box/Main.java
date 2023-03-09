@@ -1,4 +1,6 @@
-package Day1;
+package Day1.Box;
+
+import Day1.Box.Box;
 
 public class Main {
     public static void main(String[] args) {

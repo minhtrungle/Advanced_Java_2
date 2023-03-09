@@ -1,4 +1,4 @@
-package Day1;
+package Day1.Box;
 
 public class Box <T> {
     private T t;

@@ -1,6 +1,6 @@
 package Day1.Ex1;
 
-public class MayTinh <T> extends Number{
+public abstract class MayTinh <T> {
     private T t1;
     private T t2;
 
@@ -19,26 +19,11 @@ public class MayTinh <T> extends Number{
     public void setT2(T t2) {
         this.t2 = t2;
     }
-    public tong() {
+    public abstract T tong(T...t);
 
-    }
-    @Override
-    public int intValue() {
-        return 0;
-    }
+    public abstract T hieu(T t1, T t2);
 
-    @Override
-    public long longValue() {
-        return 0;
-    }
+    public abstract T tich(T...ts);
 
-    @Override
-    public float floatValue() {
-        return 0;
-    }
-
-    @Override
-    public double doubleValue() {
-        return 0;
-    }
+    public abstract T thuong(T t1, T t2);
 }
