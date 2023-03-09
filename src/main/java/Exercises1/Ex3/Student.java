@@ -46,11 +46,11 @@ public class Student implements MyComparator <Student> {
     }
 
     @Override
-    public int compare(Student o1, Student o2) {
-        if (o1.mark > o2.mark) {
+    public int compare(Student o) {
+        if (this.mark > o.mark) {
             return 1;
-        } else if (o1.mark == o2.mark) {
-            return 0;
+        } else if (this.mark < o.mark) {
+            return -1;
         }
         return 0;
     }
