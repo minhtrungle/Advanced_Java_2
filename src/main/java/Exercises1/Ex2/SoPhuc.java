@@ -43,7 +43,7 @@ public class SoPhuc {
     //Nhan 2 so phuc
     public SoPhuc nhanSP(SoPhuc sp2) {
         double thuc = this.a * sp2.a - this.b * sp2.b;
-        double ao  = this.a * sp2.b + this.a * sp2.b;
+        double ao  = this.a * sp2.b + this.b * sp2.a;
         return new SoPhuc(thuc, ao);
     }
     //Chia 2 so phuc
@@ -55,6 +55,9 @@ public class SoPhuc {
 
     @Override
     public String toString() {
-        return String.format("%f + %fi", a, b);
+        if (b < 0) {
+            return String.format("%.1f - %.1fi", a, Math.abs(b));
+        }
+        return String.format("%.1f + %.1fi", a, b);
     }
 }

@@ -8,8 +8,12 @@ public class Main {
         SoPhuc sp3 = new SoPhuc(3,-3);
 
         SoPhuc result = t1.cong(sp1, sp2);
-        SoPhuc result2 = t1.cong(sp2, sp3);
+        SoPhuc result2 = t1.nhan();
+        SoPhuc result3 = t1.chia(sp1, sp2);
+        SoPhuc result4 = t1.tru(sp1, sp2);
         System.out.println(result);
         System.out.println(result2);
+        System.out.println(result3);
+        System.out.println(result4);
     }
 }

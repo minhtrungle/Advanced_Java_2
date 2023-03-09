@@ -1,0 +1,6 @@
+Write a generic interface Comparator<T> that has a method int compare(T o1, T o2)
+that returns a negative number if o1 is less than o2, zero if they are equal,
+ and a positive number if o1 is greater than o2.
+
+ Làm các bài toán về sắp xếp
+ VD: sắp xếp mảng đối tượng sv, hình học so sánh như thế nào
