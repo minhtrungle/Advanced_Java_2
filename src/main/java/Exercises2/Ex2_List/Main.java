@@ -1,9 +1,6 @@
 package Exercises2.Ex2_List;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 //    public void minV(double[] arr) {
@@ -80,7 +77,17 @@ public class Main {
         Collections.sort(arrHinh);
         System.out.println(arrHinh);
 
-
-
+        //Sắp xếp theo thể tích giảm dần
+        Collections.sort(arrHinh, new Comparator<HinhHoc3D>() {
+            @Override
+            public int compare(HinhHoc3D o1, HinhHoc3D o2) {
+                if (o1.tinhTheTich() > o2.tinhTheTich()) {
+                    return 1;
+                } else if (o1.tinhTheTich() < o2.tinhTheTich()) {
+                    return -1;
+                }
+                return 0;
+            }
+        });
     }
 }
