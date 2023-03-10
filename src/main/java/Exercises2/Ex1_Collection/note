@@ -1,0 +1,38 @@
+Java Collection
+Xây dựng chương trình quản lý điểm của sinh viên chuyên nghành công nghệ thông tin. (giả định rằng tất
+cả các bạn sinh viên đều học các môn như nhau).
+Xây dựng class SinhVien:
+* Thuộc tính:
+- Mã sinh viên: String
+- Tên sinh viên: String
+- Ngày sinh: String
+- Quê quán
+* Phương thức:
+- Contructor mặc định và đầy đủ tham số.
+- Setter/getter
+- toString: in ra thông tin chi tiết của từng sinh viên.
+Xây dựng class MonHoc:
+* Thuộc tính:
+- Mã môn học: String
+- Tên môn học: String
+* Phương thức:
+- Constructor mặc định và đầy đủ tham số.
+- Setter/getter
+Xây dựng class Diem:
+* Thuộc tính:
+- Mã sinh viên
+- Mã môn học
+- Điểm số: int [0, 100]
+Viết chương trình có menu như sau:
+1. Danh sách sinh viên ( in ra danh sách toàn bộ sinh viên)
+2. Nhập thông tin sinh viên mới. (nhập dữ liệu từ bàn phím)
+3. Tìm kiếm sinh viên theo ID ( in ra chi tiết, nếu không có phải đưa thông báo)
+4. Danh sách môn học.
+5. Nhập thông tin môn học mới.
+6. Nhập điểm môn học cho sinh viên. (gợi ý: nhập mã sinh viên muốn nhập -> chọn môn -> nhập
+điểm)
+7. Cập nhật điểm cho sinh viên.
+8. Xem điểm sinh viên theo mã ID. (theo định dạng bên dưới)
+Mã môn Tên môn Điểm số
+9. In ra danh sách sinh viên theo các mã môn học.
+10. In ra sinh viên có điểm trung bình tất cả các môn cao nhất.

@@ -1,0 +1,19 @@
+B1. Tạo interface là IHinhHoc có phương thức:
++tinhChuVi(): double
++ tinhDienTich():double
+Xây dựng lớp HinhVuong (tự chọn thuộc tính) implement lại phương thức IHinhHoc.
+Xây dựng lớp HinhTron (tự chọn thuộc tính) implement lại phương thức IHinhHoc.
+Xây dựng lớp Drawable có phương thức draw với tham số truyền vào là 1 class bất kì được implement
+từ interface IHinhHoc, phương thức draw có giá trị trả về là void.
+Gợi ý: draw<T extends IHinhHoc> (T t)
+Xây dựng lớp thử nghiệm.
+B2.Tạo 1 interface ITinhToan có cấu trúc như sau:
+public interface ITinhToan <T>{
+ public T cong(T...args);
+ public T tru(T t1, T t2);
+ public T nhan(T...args);
+ public T chia(T1 t1, T t2);
+}
+Hãy xây dựng lớp TinhToanSoPhuc implements lại interface ITinhToan với kiểu dữ liệu T là SoPhuc
+Viết chương trình thử nghiệm.
+Gợi ý: cần định nghĩa class SoPhu
