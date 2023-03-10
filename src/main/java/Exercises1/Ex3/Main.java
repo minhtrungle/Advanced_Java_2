@@ -22,7 +22,7 @@ public class Main {
         HinhTron[] ht = new HinhTron[5];
         Random random = new Random();
         for (int i = 0; i < ht.length; i++) {
-            ht[i] = new HinhTron(random.nextInt(100) + 1);
+            ht[i] = new HinhTron(random.nextInt(100));
         }
 
         //In ra 5 hình
