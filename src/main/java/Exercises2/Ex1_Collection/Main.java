@@ -176,7 +176,7 @@ public class Main {
                 case 7:
                     System.out.println("Cập nhật điểm cho sinh viên ");
                     //kiểm tra mã sinh viên
-                    System.out.print("Nhập mã sinh viên: ");
+                    System.out.print("Nhập mã sinh viên muốn cập nhật: ");
                     String maSV1 = input.nextLine();
 
                     boolean check3 = false;
@@ -191,7 +191,7 @@ public class Main {
                     continue;
                     }
                     //kiểm tra môn học
-                    System.out.print("Nhập mã môn học: ");
+                    System.out.print("Nhập mã môn học muốn cập nhật: ");
                     String maMH1 = input.nextLine();
                     for (MonHoc MH: arrMonHoc) {
                         if (MH.getIdSubject().equals(maMH1)) {
@@ -202,14 +202,68 @@ public class Main {
                     System.out.println("Không có môn học");
                     continue;
                     }
+                    //kiểm tra sv đó học môn này chưa và có điểm chưa
+                    Diem diem1 = null;
+                    for (Diem diem : arrDiem) {
 
-                    //Cập nhật điểm
+                    }
+                    //Cập nhật điểm,
+                    System.out.println("Nhập điểm muốn cập nhật: ");
+                    int diemMoi = Integer.parseInt(input.nextLine());
+                    for (int i = 0; i < arrDiem.size(); i++) {
+                        if (check3 == true && check4 == true) {
+                            Diem d1 = arrDiem.get(i);
+                            d1.setMark(diemMoi);
+                        }
+                    }
+                    //thêm vào arrDiem
+                    Diem d2 = new Diem(maSV1, maMH1, diemMoi);
+                    arrDiem.add(d2);
+                    System.out.println(arrDiem);
                     break;
                 case 8:
                     System.out.println("Xem điểm sinh viên theo mã ID");
+                    //kiểm tra mã sinh viên
+                    System.out.print("Nhập mã sinh viên muốn xem điểm: ");
+                    String maSV2 = input.nextLine();
+
+                    boolean check5 = false;
+                    for (SinhVien sv: arrSinhVien) {
+                        if (sv.getId().equals(maSV2)) {
+                            check5 = true;
+                            break;
+                        }
+                    } if (check5 == false) {
+                    System.out.println("Không có sinh viên");
+                    continue;
+                    }
+
+                    //Xem điểm sinh viên,
+                    System.out.println("Điểm của sinh viên vừa nhập là: ");
+                    for (int i = 0; i < arrDiem.size(); i++) {
+                        if (check5 == true) {
+                            Diem d3 = arrDiem.get(i);
+                            System.out.println(d3);
+                        }
+                    }
                     break;
                 case 9:
                     System.out.println("In ra danh sách sinh viên theo các mã môn học");
+                    //kiểm tra môn học
+                    System.out.print("Nhập mã môn học muốn cập nhật: ");
+                    String maMH2 = input.nextLine();
+                    boolean check6 = false;
+                    for (MonHoc MH: arrMonHoc) {
+                        if (MH.getIdSubject().equals(maMH2)) {
+                            check6 = true;
+                            break;
+                        }
+                    } if (check6 == false) {
+                    System.out.println("Không có môn học");
+                    continue;
+                     }
+
+
                     break;
                 case 10:
                     System.out.println("In ra sinh viên có điểm trung bình tất cả các môn cao nhất");
