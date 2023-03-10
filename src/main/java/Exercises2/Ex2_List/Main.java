@@ -51,13 +51,22 @@ public class Main {
         //In ra hình có thể tích nhỏ nhất.
         double min = arrHinh.get(0).tinhTheTich();
         int index = 0;
-        for (int i = 0; i < arrHinh.size(); i++) {
+        for (int i = 1; i < arrHinh.size(); i++) {
             if (min > arrHinh.get(i).tinhTheTich()) {
                 min = arrHinh.get(i).tinhTheTich();
                 index = i;
             }
         }
         System.out.println("Hình có thể tích nhỏ nhất là: " + arrHinh.get(index));
+        //cách 2
+//        HinhHoc3D minHH3D = arrHinh.get(0);
+//        for (int i = 1; i < arrHinh.size(); i++) {
+//            if(minHH3D.tinhTheTich() > arrHinh.get(i).tinhTheTich()) {
+//                minHH3D = arrHinh.get(i);
+//            }
+//        }
+//        System.out.println(minHH3D);
+
         //Tính trung bình cộng thể tích các hình
         double Sum = 0;
         double result = 0;
