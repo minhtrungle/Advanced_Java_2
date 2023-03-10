@@ -1,0 +1,20 @@
+1. Tạo 1 interface HinhHoc3D có 1 phương thức
+trừu tượng là tính thể tích
++ tinhTheTich(): double
+
+
+Tạo class HinhCau implements HinhHoc3D với
+thuộc tính: bán kính
+
+Tạo class HinhLapPhuong implements HinhHoc3D
+với thuộc tính: cạnh
+
+Tạo 1 chương trình cho phép nhập thông tin các hình
+và lưu trữ trong 1 List
+Gợi ý:
+List<HinhHoc3D> arrHinh;
+
+a. Nhập n hình khác nhau (có thể nhập trực tiếp)
+b. In ra hình có thể tích nhỏ nhất.
+c. Tính trung bình cộng thể tích các hình.
+d. Sắp xếp theo thể tích tăng dần
