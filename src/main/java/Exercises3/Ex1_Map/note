@@ -1,0 +1,12 @@
+Tạo 1 map lưu trữ thông tin, danh bạ người dùng.
+theo định dạng  Họ tên - SDT (hoặc ngược lại)
+Trong đó sđt là duy nhất.
+
+Viết chương trình có các chức năng như sau:
+
+--- QUẢN LÝ DANH BẠ ---
+1. Thêm danh bạ
+2. Cập nhật tên danh bạ
+3. Xoá danh bạ theo sdt
+4. Xem toàn bộ danh bạ
+5. Thoát
