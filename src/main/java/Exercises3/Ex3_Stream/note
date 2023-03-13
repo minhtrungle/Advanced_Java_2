@@ -1,0 +1,25 @@
+Instructions
+- Tạo 1 class Student có các thuộc tính:id, name, age, gender, mark [0,100]
+có các phương thức phù hợp.
+
+
+- Xây dựng chương trình chính có hàm main:
++ Sử dụng Function (functional interface builtin) có tham số truyền
+vào là 1 List<Student> và giá trị trả về là double.
++ Sử dụng Predicate (functional interface builtin) có tham số truyền
+vào là 1 Student
+
+* Xây dựng các chức năng sau:
+- Sử dụng Function:
++ In ra tuổi trung bình của các sinh viên trong danh sách.
++ In ra điểm số cao nhất.
++ In ra điểm số thấp nhất.
++ In ra điểm số phổ biến nhất.
+
+- Sử dụng Predicate:
++ In ra thông tin của những người có tuổi lớn hơn 19.
++ In ra thông tin các nữ sinh viên.
++ In ra thông tin những bạn điểm dưới < 50.
++ In ra những bạn có họ Nguyễn.
+
+Yêu cầu: viết functional interface + lambda expression.
