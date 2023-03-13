@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class SetExample {
-    public static void main(String[] args) {
+    public static void main(String[] args) {//Set trong java là một Collection không thể chứa các phần tử trùng lặp.
         //Tạo 2 set chứa các chuỗi được nhập từ bàn phím
         Scanner in = new Scanner(System.in);
         Set<String> stringSet = new HashSet<>();
