@@ -1,3 +1,12 @@
 Trong Java 8, Consumer<T> là một functional interface và do đó nó có thể được sử dụng với lambda expression hoặc method reference cho một mục đích cụ thể nào đó. Consumer<T> chấp nhận một tham số đầu vào, và method này không trả về gì cả.
 
 Mục tiêu chính của Interface Consumer là thực hiện một thao tác trên đối số đã cho.
+
+Vì Consumer là một Functional Interface nên nó chỉ định nghĩa một phương thức abstract là accept(). Ngoài ra,
+ như các bạn thấy, nó còn định nghĩa thêm một phương thức default andThen().
+
+Phương thức accept() được định nghĩa với một tham số generic và không trả về gì cả. Và chúng ta sẽ sử dụng
+tham số này để thao tác, tính toán này nọ.
+
+Ví dụ như chúng ta thường sử dụng interface Consumer trong phương thức forEach() của các đối tượng Collection
+ như List, Set, …
