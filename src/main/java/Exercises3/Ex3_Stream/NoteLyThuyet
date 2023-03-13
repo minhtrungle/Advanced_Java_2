@@ -1,0 +1,20 @@
+2. Các methods trong Stream
+2.1 Terminal Operations
+
+Các hoạt động đầu cuối này gồm các method có kiểu trả về khác stream như kiểu nguyên thủy(primitive), đối tượng(String, Integer,…) hay collections.
+
+-Collect method: Dùng để trả về kết quả của stream dưới dạng List hoặc Set.
+
+-forEach method: Dùng để duyệt qua mọi phần tử trong stream.
+-Reduce method: Reduce() method với 1 trong 2 tham số truyền vào là method reference, dùng dể kết hợp các phần tử thành một giá trị đơn cùng kiểu với dữ liệu ban đầu.
+-Max, Min method: Trả về giá trị lớn nhất hoặc bé nhất trong các phần tử.
+2.2 Intermediate Operations
+
+Mỗi hoạt động trung gian này được thực thi một cách riêng biệt và có kết quả trả về cũng là một Stream do đó ta có thể kết hợp nhiều intermediate methods với nhau. Sau đây là một vài intermediate method:
+
+-Distinct method: Được dùng để loại bỏ các phần tử trùng lặp.
+-Map method: Map method được sử dụng để trả về một stream mà ở đó các phần tử đã  được thay đổi theo cách người dùng tự định nghĩa.
+-Filter method: Dùng để lọc và xóa bỏ các phần tử với điều kiện do người dùng định nghĩa.
+-Sorted method: Dùng cho việc sắp xếp các phần tử.
+-Limit method: limit(n) với tham số đầu vào là số nguyên không âm n nó sẽ trả về một stream chứa n phần tử đầu tiên.
+-Skip method: skip(n) với tham số truyền vào là số nguyên không âm n nó sẽ trả về các phần tử còn lại đằng sau n phần tử đầu tiên.
