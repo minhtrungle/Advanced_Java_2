@@ -41,7 +41,7 @@ public class Main {
         System.out.println("Nhập tên cập nhật mới: ");
         String hoTenMoi = in.nextLine();
 
-        //Nếu chưa có thì nhập tên lưu danh bạ
+        //lưu danh bạ
         listMap.replace(sdt, hoTenMoi);
         System.out.println("Cập nhật danh bạ thành công!");
     }
@@ -76,7 +76,7 @@ public class Main {
             } catch (Exception e) {
                 System.out.println(e);
             }
-            if (index < 0 || index > 5) {
+            if (index <= 0 || index > 5) {
                 System.out.println("Chức năng không có ");
                 continue;
             }
@@ -124,7 +124,7 @@ public class Main {
                 case 4:
                     System.out.println("4. Xem toàn bộ danh bạ ");
                     for (String phone : listMap.keySet()) {
-                        System.out.printf("%s - %s", listMap.get(phone), phone);
+                        System.out.printf("%s - %s \n", listMap.get(phone), phone);
                     }
                     break;
 
