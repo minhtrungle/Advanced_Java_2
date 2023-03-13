@@ -17,5 +17,7 @@ public class Main {
             }
         };
         System.out.println(expression.calculator(1,4));
+        //Thường định nghĩa trong trường hợp cần dùng
+        //Thường kết hợp Stream API và Lambda expression
     }
 }
