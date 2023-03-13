@@ -1,0 +1,7 @@
+Tạo 1 functional interface có 1 phương thức, nhận tham số truyền vào là 1 chuỗi, giá trị trả về là int.
+
+- Tạo các biểu thức lambda thực hiện  các chức năng sau:
++ Đếm số kí tự của chuỗi.
++ Tính số từ trong chuỗi.
++ Đếm số từ 'a', 'A' trong chuỗi.
++ Đếm số kí tự được sử dụng trong chuỗi. (mỗi kí tự chỉ in 1 lần) VD: hello -> h,e, l, o -> 4 kí tự
