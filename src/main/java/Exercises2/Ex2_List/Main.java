@@ -81,10 +81,10 @@ public class Main {
         Collections.sort(arrHinh, new Comparator<HinhHoc3D>() {
             @Override
             public int compare(HinhHoc3D o1, HinhHoc3D o2) {
-                if (o1.tinhTheTich() > o2.tinhTheTich()) {
-                    return -1;
-                } else if (o1.tinhTheTich() > o2.tinhTheTich()) {
+                if (o1.tinhTheTich() < o2.tinhTheTich()) {
                     return 1;
+                } else if (o1.tinhTheTich() > o2.tinhTheTich()) {
+                    return -1;
                 }
                 return 0;
             }
