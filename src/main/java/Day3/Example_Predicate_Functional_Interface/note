@@ -1,0 +1,4 @@
+Interface Predicate được sử dụng với mục đích chính là để filter
+một đối tượng Stream. Sử dụng phương thức filter() với tham số là
+interface Predicate sẽ giúp chúng ta filter những item trong đối tượng Stream
+ thoả mãn điều kiện nào đó.
