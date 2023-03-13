@@ -12,6 +12,7 @@ public class PredicateExample {
         //Lọc ra những chuỗi có số từ lớn hơn 2 và có từ 'a'
 
         //Cần có 1 hàm -> tính được số từ
+        //Function inteface là interface đơn giản với method nhận vào một tham số và trả về một giá trị.
         Function<String, Integer> demSoTu = new Function<String, Integer>() {
             @Override
             public Integer apply(String s) {
