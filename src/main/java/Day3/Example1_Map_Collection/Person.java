@@ -1,4 +1,4 @@
-package Day3.Example1;
+package Day3.Example1_Map_Collection;
 
 public class Person {
     private int id;
