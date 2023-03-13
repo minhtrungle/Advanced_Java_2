@@ -35,10 +35,11 @@ public class Main {
 //                }
 //                return count;
                 //Cách 2
+                // Khi nào bắt đầu 1 từ ?? i là khoảng trắng, i+1 ko phải khoảng trắng
                 if (document.charAt(0) != ' '){
                     count ++;
                 }
-                for (int i = 0; i < document.length(); i++) {
+                for (int i = 1; i < document.length() - 1; i++) {
                     if (document.charAt(i) == ' ' && document.charAt(i + 1) != ' ') {
                         count ++;
                     }
