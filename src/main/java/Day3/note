@@ -1,0 +1,13 @@
+Interface Map
+Trong java, map được sử dụng để lưu trữ và truy xuất dữ liệu theo
+cặp key và value. Mỗi cặp key và value được gọi là mục nhập (entry). Map trong java chỉ chứa các giá trị key duy nhất. Map rất hữu ích nếu bạn phải tìm kiếm,
+cập nhật hoặc xóa các phần tử trên dựa vào các key.
+
+
+Map<String, String> : key String, value String
+Lưu danh sách các số điện thoại
+
+Họ tên - SDT Map<String, String>
+Lưu trữ danh sách Person và tập hợp Car
+
+Map<Person, List<Car>
