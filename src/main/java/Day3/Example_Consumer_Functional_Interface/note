@@ -1,0 +1,3 @@
+Trong Java 8, Consumer<T> là một functional interface và do đó nó có thể được sử dụng với lambda expression hoặc method reference cho một mục đích cụ thể nào đó. Consumer<T> chấp nhận một tham số đầu vào, và method này không trả về gì cả.
+
+Mục tiêu chính của Interface Consumer là thực hiện một thao tác trên đối số đã cho.
