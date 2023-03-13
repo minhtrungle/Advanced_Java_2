@@ -34,7 +34,6 @@ public class Main {
         //Kiểm tra sdt đã tồn tại hay chưa
         if (listMap.containsKey(sdt)) {
             System.out.println("Đã tồn tại!");
-            return;
         }
         String hoTenCu = listMap.get(sdt);
         System.out.println("Tên muốn cập nhật là: " + hoTenCu);
