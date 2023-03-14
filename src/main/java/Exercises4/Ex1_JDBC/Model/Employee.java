@@ -1,6 +1,6 @@
 package Exercises4.Ex1_JDBC.Model;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
     private int id;
     private String full_name;
     private String city;
@@ -107,5 +107,10 @@ public class Employee {
                 ", gender=" + gender +
                 ", salary=" + salary +
                 ']';
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        return full_name.compareTo(o.full_name) ;
     }
 }
