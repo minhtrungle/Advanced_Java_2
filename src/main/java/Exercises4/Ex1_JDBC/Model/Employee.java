@@ -12,10 +12,11 @@ public class Employee implements Comparable<Employee>{
     public Employee() {
     }
 
-    public Employee(String full_name, String city, String email, String phone, int gender, int salary) {
+    public Employee(int id, String full_name, String city, String email, String phone, int gender, int salary) {
         if (salary < 0) {
             throw new RuntimeException("Error");
         }
+        this.id = id;
         this.full_name = full_name;
         this.city = city;
         this.email = email;
@@ -23,12 +24,7 @@ public class Employee implements Comparable<Employee>{
         this.gender = gender;
         this.salary = salary;
     }
-
-    public Employee(int id, String full_name, String city, String email, String phone, int gender, int salary) {
-        if (salary < 0) {
-            throw new RuntimeException("Error");
-        }
-        this.id = id;
+    public Employee(String full_name, String city, String email, String phone, int gender, int salary) {
         this.full_name = full_name;
         this.city = city;
         this.email = email;

@@ -46,7 +46,7 @@ public class EmployeeDAO {
     public Employee getByID(int id) throws SQLException {
         Connection conn = MyConnection.getConnection();
         try {
-            String sql = "SELECT * FROM `employees` WHERE `id` = " +id;
+            String sql = "SELECT * FROM `employees` WHERE `id` = " + id;
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             Employee employee = null;
@@ -71,7 +71,7 @@ public class EmployeeDAO {
     public Employee getByName(String nameEmployee) throws SQLException {
         Connection conn = MyConnection.getConnection();
         try {
-            String sql = "SELECT * FROM `employees` WHERE `full_name` = " + nameEmployee;
+            String sql = "SELECT * FROM `employees` WHERE `full_name` LIKE = " + nameEmployee;
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             Employee employee = null;
@@ -97,7 +97,7 @@ public class EmployeeDAO {
         Connection conn = MyConnection.getConnection();
 
         try {
-            String sql = String.format("INSERT INTO `employees` (`full_name`,`city`,`email`,`phone`, `gender`, `salary`) VALUES ('%s','%s','%s','%s','%d','%d')",
+            String sql = String.format("INSERT INTO `employees` VALUES (NUll, '%s','%s','%s','%s','%d','%d')",
                     emp.getFull_name(), emp.getCity(), emp.getEmail(), emp.getPhone(), emp.getGender(), emp.getSalary());
 
             Statement st = conn.createStatement();

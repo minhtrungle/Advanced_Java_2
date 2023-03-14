@@ -20,7 +20,7 @@ public class FakeData {
             e.setCity(faker.address().cityName());
             e.setGender(faker.number().numberBetween(0, 2));
             e.setSalary(faker.number().numberBetween(1000, 2000));
-            e.setEmail(faker.number().randomDigit()+ "abc" + faker.number().randomDigit() + "@gmail");
+            e.setEmail("a" + faker.number().numberBetween(100, 1000) + "abc" + faker.number().numberBetween(100, 1000) + "@gmail");
 
             employeeDAO.insertEmployee(e);
         }
