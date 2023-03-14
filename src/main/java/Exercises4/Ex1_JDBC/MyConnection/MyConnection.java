@@ -1,4 +1,4 @@
-package Day4.ExampleJDBC.Connection;
+package Exercises4.Ex1_JDBC.MyConnection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,5 +12,4 @@ public class MyConnection {
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(DB_CONNECTION_URL, DB_USER, DB_PASSWORD);
     }
-
 }
