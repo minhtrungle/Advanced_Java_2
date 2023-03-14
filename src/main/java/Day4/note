@@ -1,0 +1,3 @@
+JDBC là chuẩn cho Java API kết nối CSDL
+Statement câu lệnh thực thi
+ResultSet chứa csdl được thực thi
