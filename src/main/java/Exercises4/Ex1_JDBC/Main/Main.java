@@ -57,7 +57,16 @@ public class Main {
     }
 
     private static void option2() throws SQLException {
-        List<Employee> employeeList = EmployeeDAO.getAllEmployee();
+        EmployeeDAO employeeDAO = new EmployeeDAO();
+        List<Employee> employeeList = employeeDAO.getAllEmployee();
+        employeeList.stream()
+                        .sorted(new Comparator<Employee>() {
+                            @Override
+                            public int compare(Employee o1, Employee o2) {
+                                return o1.getFull_name().compareTo(o2.getFull_name());
+                            }
+                        })
+                                .forEach(employee -> System.out.println(employee));
         System.out.println(employeeList);
     }
     private static void option3(Scanner input) throws SQLException {

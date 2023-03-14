@@ -139,8 +139,8 @@ public class EmployeeDAO {
             e.printStackTrace();
         }
     }
-    //Xóa người dùng
-    public void deleteEmployee(Employee emp, int id) throws SQLException {
+    //Xóa người dùng ở id thứ...
+    public void deleteEmployee(int id) throws SQLException {
         Connection conn = MyConnection.getConnection();
         Employee empCheck = getByID(id);
         if (empCheck == null) {
