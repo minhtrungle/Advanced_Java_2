@@ -101,7 +101,10 @@ public class EmployeeDAO {
                     emp.getFull_name(), emp.getCity(), emp.getEmail(), emp.getPhone(), emp.getGender(), emp.getSalary());
 
             Statement st = conn.createStatement();
-            st.executeUpdate(sql);
+            int rs  = st.executeUpdate(sql);
+            if (rs == 0) {
+                System.out.println("Thêm không thành công");
+            }
 
             st.close();
             conn.close();

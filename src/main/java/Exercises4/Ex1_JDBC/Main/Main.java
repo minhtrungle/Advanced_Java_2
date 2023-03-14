@@ -62,7 +62,6 @@ public class Main {
     }
     private static void option3(Scanner input) throws SQLException {
         List<Employee> employeeList = EmployeeDAO.getAllEmployee();
-        Employee emp = new Employee();
         System.out.println("Nhập tên muốn tìm: ");
         String ten = input.nextLine();
         employeeList.stream()
