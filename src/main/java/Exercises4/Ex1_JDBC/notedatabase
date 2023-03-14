@@ -1,0 +1,13 @@
+create database jdbc_demo;
+use jdbc_demo;
+
+drop table if exists employees;
+create table if not exists employees(
+id INT PRIMARY KEY AUTO_INCREMENT,
+full_name VARCHAR(30) NOT NULL,
+city VARCHAR(50),
+email VARCHAR(255) NOT NULL UNIQUE,
+phone VARCHAR(30),
+gender TINYINT,
+salary INT
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
