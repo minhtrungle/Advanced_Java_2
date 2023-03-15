@@ -30,10 +30,4 @@ public class HinhTron {
         return (double) Math.round(PI * banKinh * banKinh * 1000) / 1000;
     }
 
-    @Override
-    public String toString() {
-        return "HinhTron[" +
-                "banKinh=" + banKinh +
-                ']';
-    }
 }

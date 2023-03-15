@@ -71,5 +71,4 @@ class HinhTronTest {
         String expected = "Error";
         Assertions.assertEquals(expected, actualException.getMessage());
     }
-
 }
