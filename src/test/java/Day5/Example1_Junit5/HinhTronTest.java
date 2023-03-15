@@ -1,8 +1,8 @@
 package Day5.Example1_Junit5;
 
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -26,7 +26,7 @@ class HinhTronTest {
 
         double expected = 6.283;
 
-        double actual = ht.chuVi();
+        double actual = ht.tinhChuVi();
 
         Assertions.assertEquals(expected, actual, 0.001);// độ chính xác đến cs tp thứ 3
 
@@ -38,7 +38,7 @@ class HinhTronTest {
 
         double expected = 14.159;
 
-        double actual = ht.dienTich();
+        double actual = ht.tinhDienTich();
 
         Assertions.assertTrue(Math.abs(expected - actual) < 0.001);//
         //14.159 và 14.1598 vẫn đúng êến cs thập phân thứ 3
@@ -46,7 +46,7 @@ class HinhTronTest {
     @Test
     @DisplayName("Ném ra exception nếu khởi tạo hình tròn có bán kính bằng 0")
     public  void exception1() {
-        Exception actualException = Assertions.assertThrows(RuntimeException.class, new Executable() {
+        Exception actualException = Assertions.assertThrows(RuntimeException.class, new org.junit.jupiter.api.function.Executable() {
             @Override
             public void execute() throws Throwable {
                 HinhTron ht = new HinhTron(-4);
@@ -71,4 +71,5 @@ class HinhTronTest {
         String expected = "Error";
         Assertions.assertEquals(expected, actualException.getMessage());
     }
+
 }
