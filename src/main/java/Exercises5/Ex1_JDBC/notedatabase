@@ -1,3 +1,37 @@
+Xây dựng chương trình quản lý sản phẩm của một cửa hàng bán hàng đồ chơi vừa và nhỏ. Mỗi
+sản phẩm bao gồm các thông tin: mã sản phẩm (duy nhất), tên sản phẩm, giá sản phẩm, kích
+thước và màu sắc, hãng sản xuất.
+Mỗi sản phẩm do một nhà sản xuất duy nhất. Mỗi nhà sản xuất có 1 hoặc nhiều sản phẩm. Mỗi
+nhà sản xuất bao gồm thông tin: mã nhà sản xuất, tên nhà sản xuất và địa chỉ.
+Tạo cơ sở dữ liệu bkacad, chứa các bảng sau bảng sau:
+products
+id INT PRIMARY KEY AUTO_INCREMENT
+product_name VARCHAR(30) NOT NULL
+product_price INT CHECK (product_price > 0)
+product_size VARCHAR(2) (S, M, L….)
+product_color VARCHAR(20)
+brand_id INT FK (brands)
+brands
+id INT PRIMARY KEY AUTO_INCREMENT
+brand_name VARCHAR(40) NOT NULL
+brand_address VARCHAR(100)
+Viết chương trình Java có menu như bên dưới.
+---------------- QUẢN LÝ SẢN PHẨM --------------
+1. Danh sách sản phẩm theo bảng
+STT Tên sản phẩm Giá sản phẩm Màu sắc
+2. Thêm sản phẩm (nhập từ bàn phím)
+3. Xoá sản phẩm theo mã
+4. Cập nhật thông tin sản phẩm
+5. Lấy ra thông tin sau:
+Hãng sản xuất Số lượng loại hàng
+Hãng A 3 (ví dụ bao gồm SP1, SP2, SP3)
+6. Lấy ra top 5 sản phẩm có giá cao nhất và in ra thông tin.
+--------------------------------------------------
+7. Danh sách hãng sản xuất
+8. Thêm hãng sản xuất
+9. Xoá hãng sản xuất theo mã
+
+
 create database JDBC_demo;
 use JDBC_demo;
 
