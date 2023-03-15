@@ -7,6 +7,7 @@ import Exercises5.Ex1_JDBC.Model.Product;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -27,10 +28,11 @@ public class Main {
     private static void option1() throws SQLException {
         ProductDAO productDAO = new ProductDAO();
         List<Product> productList = productDAO.getAllProduct();
-        System.out.printf("%20s %20s %20s %20s", "STT", "Tên sản phẩm", "Giá sản phẩm");
+
+        System.out.printf("%-20s %-20s %-20s %-20s", "STT", "Tên sản phẩm", "Giá sản phẩm");
         for (int i = 0; i < productList.size(); i++) {
             Product p = productList.get(i);
-            System.out.printf("%20d %20s %20d %20s\n", (i + 1), p.getProductName(), p.getProductPrice(), p.getProductColor());
+            System.out.printf("%-20d %-20s %-20d %-20s\n", (i + 1), p.getProductName(), p.getProductPrice(), p.getProductColor());
         }
     }
 
@@ -44,7 +46,7 @@ public class Main {
         p.setProductName(tenSP);
 
         System.out.println("Nhập giá muốn thêm: ");
-        int giaSP = input.nextInt();
+        int giaSP = Integer.parseInt(input.nextLine());
         p.setProductPrice(giaSP);
 
         System.out.println("Nhập size muốn thêm: ");
@@ -60,18 +62,18 @@ public class Main {
         System.out.println(brandList);
 
         System.out.println("Nhập ID Brand muốn thêm: ");
-        int idbrand = input.nextInt();
+        int idbrand = brandList.get(Integer.parseInt(input.nextLine()) - 1).getId();
         p.setBrandId(idbrand);
 
 
         productDAO.insertProduct(p);
         System.out.println("Thêm sản phẩm thành công");
-        input.close();
+
     }
 
     private static void option3(Scanner input) throws SQLException {
         ProductDAO productDAO = new ProductDAO();
-        System.out.println("Nhập id saản phẩm muốn xóa: ");
+        System.out.println("Nhập id sản phẩm muốn xóa: ");
         int idSP = Integer.parseInt(input.nextLine());
 
         productDAO.deleteProduct(idSP);
@@ -89,7 +91,7 @@ public class Main {
         p.setProductName(tenSP);
 
         System.out.println("Nhập giá muốn cập nhật: ");
-        int giaSP = input.nextInt();
+        int giaSP = Integer.parseInt(input.nextLine());
         p.setProductPrice(giaSP);
 
         System.out.println("Nhập size muốn cập nhật: ");
@@ -103,7 +105,7 @@ public class Main {
         System.out.println("Nhập ID Brand muốn cập nhật: ");
         int idbrand = input.nextInt();
         p.setBrandId(idbrand);
-        input.close();
+
         productDAO.updateProduct(p, idSP);
         System.out.println("Cập nhật sản phẩm thành công");
     }
@@ -112,10 +114,25 @@ public class Main {
 
     }
     private static void option6() throws SQLException {
-
+        ProductDAO productDAO = new ProductDAO();
+        List<Product> productList = productDAO.getAllProduct();
+        productList.stream()
+                .sorted((o1, o2) -> { //Giảm dần
+                    if (o1.getProductPrice() < o2.getProductPrice()) {
+                        return 1;
+                    } else if (o1.getProductPrice() > o2.getProductPrice()) {
+                        return -1;
+                    }
+                    return 0;
+                })
+                .limit(5)
+                .forEach(p -> System.out.println(p));
     }
     private static void option7() throws SQLException {
-
+        BrandDAO brandDAO = new BrandDAO();
+        List<Brand> brandList = brandDAO.getAllBrand();
+        brandList.stream()
+                .forEach(b -> System.out.println(b) );
     }
     private static void option8(Scanner input) throws SQLException {
         BrandDAO brandDAO = new BrandDAO();
@@ -133,19 +150,24 @@ public class Main {
         System.out.println("Thêm hãng thành công");
 
     }
-    private static void option9() throws SQLException {
-
+    private static void option9(Scanner input) throws SQLException {
+        BrandDAO brandDAO = new BrandDAO();
+        System.out.println("Nhập id hãng muốn xóa: ");
+        int idbrand = input.nextInt();
+        brandDAO.deleteBrand(idbrand);
+        System.out.printf("Xóa hãng có id = %d thành công", idbrand);
     }
     public static void main(String[] args) throws SQLException {
-        MeNu();
-        System.out.println("Chọn chức năng [1-9]");
         Scanner in = new Scanner(System.in);
+
         int index = -1;
         do {
+            MeNu();
+            System.out.println("Chọn chức năng [1-9]");
             try {
                 index = Integer.parseInt(in.nextLine());
             } catch (Exception e) {
-                System.out.println("Không có chức năng!");
+                System.out.println(e);
             }
             if (index < 1 || index > 9) {
                 System.out.println("Không có chức năng!");
@@ -172,21 +194,21 @@ public class Main {
                     System.out.println("5. Lấy ra thông tin sau:");
                     option5();
                     break;
-//                case 6:
-//                    System.out.println("6. Lấy ra top 5 sản phẩm có giá cao nhất");
-//                    option6();
-//                    break;
-//                case 7:
-//                    System.out.println("7. Danh sách hãng sản xuất");
-//                    option7();
-//                    break;
+                case 6:
+                    System.out.println("6. Lấy ra top 5 sản phẩm có giá cao nhất");
+                    option6();
+                    break;
+                case 7:
+                    System.out.println("7. Danh sách hãng sản xuất");
+                    option7();
+                    break;
                 case 8:
                     System.out.println("8. Thêm hãng sản xuất");
                     option8(in);
                     break;
                 case 9:
                     System.out.println("9. Xoá hãng sản xuất theo mã");
-                    //option9();
+                    option9(in);
                     break;
                 default:
                     System.out.println("Exit");

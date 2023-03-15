@@ -110,7 +110,7 @@ public class BrandDAO {
             e.printStackTrace();
         }
     }
-    public void delete(Brand p, int id) throws SQLException {
+    public void deleteBrand(int id) throws SQLException {
         Connection conn = MyConnection.getConnection();
         BrandDAO brandDAO = new BrandDAO();
         Brand bra = brandDAO.getByID(id);
