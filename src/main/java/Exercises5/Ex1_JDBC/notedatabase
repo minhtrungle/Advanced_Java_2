@@ -1,0 +1,22 @@
+create database JDBC_demo;
+use JDBC_demo;
+
+drop table if exists Products;
+create table if not exists Products(
+	id int not null primary key auto_increment,
+    Product_name varchar(30) not null,
+    Product_price int,
+    Product_size varchar(2),
+    Product_color varchar(20),
+    Product_id int,
+    check (Product_price > 0),
+    constraint FK_Products_Products foreign key (Product_id) references Products (id)
+
+) engine InnoDB;
+
+drop table if exists Products;
+create table if not exists Products(
+	id int not null primary key auto_increment,
+    Product_name varchar(40) not null,
+    Product_address varchar(100)
+) engine InnoDB;
