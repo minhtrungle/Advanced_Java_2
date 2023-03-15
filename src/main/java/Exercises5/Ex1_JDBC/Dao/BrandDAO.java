@@ -119,7 +119,7 @@ public class BrandDAO {
             return;
         }
         try {
-            String sql = "DELETE `brands` WHERE `id` = %d";
+            String sql = "DELETE FROM `brands` WHERE `id` =" + id;
 
             Statement sta = conn.createStatement();
 
