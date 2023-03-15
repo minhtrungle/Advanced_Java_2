@@ -27,12 +27,16 @@ public class Main {
     private static void option1() throws SQLException {
         ProductDAO productDAO = new ProductDAO();
         List<Product> productList = productDAO.getAllProduct();
-        productList.stream()
-                .forEach(p -> System.out.println("STT: " + p.getId() + ", Tên sản phẩm " + p.getProductName() + ", Giá sản phẩm: " + p.getProductPrice() + ", Màu sắc: " + p.getProductColor()));
+        System.out.printf("%20s %20s %20s %20s", "STT", "Tên sản phẩm", "Giá sản phẩm");
+        for (int i = 0; i < productList.size(); i++) {
+            Product p = productList.get(i);
+            System.out.printf("%20d %20s %20d %20s\n", (i + 1), p.getProductName(), p.getProductPrice(), p.getProductColor());
+        }
     }
 
     private static void option2(Scanner input) throws SQLException {
         ProductDAO productDAO = new ProductDAO();
+        BrandDAO brandDAO = new BrandDAO();
         Product p = new Product();
 
         System.out.println("Nhập tên sp muốn thêm: ");
@@ -51,12 +55,18 @@ public class Main {
         String mauSP = input.nextLine();
         p.setProductColor(mauSP);
 
+        System.out.println("Danh sách hãng");
+        List<Brand> brandList = brandDAO.getAllBrand();
+        System.out.println(brandList);
+
         System.out.println("Nhập ID Brand muốn thêm: ");
         int idbrand = input.nextInt();
         p.setBrandId(idbrand);
 
+
         productDAO.insertProduct(p);
         System.out.println("Thêm sản phẩm thành công");
+        input.close();
     }
 
     private static void option3(Scanner input) throws SQLException {
@@ -101,6 +111,12 @@ public class Main {
     private static void option5() throws SQLException {
 
     }
+    private static void option6() throws SQLException {
+
+    }
+    private static void option7() throws SQLException {
+
+    }
     private static void option8(Scanner input) throws SQLException {
         BrandDAO brandDAO = new BrandDAO();
         Brand b = new Brand();
@@ -115,6 +131,9 @@ public class Main {
 
         brandDAO.insertBrand(b);
         System.out.println("Thêm hãng thành công");
+
+    }
+    private static void option9() throws SQLException {
 
     }
     public static void main(String[] args) throws SQLException {
