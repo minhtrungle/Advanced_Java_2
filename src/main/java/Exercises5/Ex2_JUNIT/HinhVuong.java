@@ -7,7 +7,7 @@ public class HinhVuong {
     }
 
     public HinhVuong(double canh) {
-        if (canh <=0) {
+        if(canh <= 0){
             throw new RuntimeException("Cạnh phải là số dương");
         }
         this.canh = canh;
@@ -18,23 +18,23 @@ public class HinhVuong {
     }
 
     public void setCanh(double canh) {
-        if (canh <=0) {
-            throw new RuntimeException("Cạnh phải là số dương");
-        }
         this.canh = canh;
     }
+
     public double chuVi() {
-        double chuvi = 4 * canh;
-        return chuvi;
+        double cv = canh * 4;
+        return Math.round(cv * 100)/100.0;
     }
+
     public double dienTich() {
-        return canh * canh;
+        double dt = canh * canh;
+        return Math.round(dt * 100)/100.0;
     }
 
     @Override
     public String toString() {
-        return "HinhVuong:[" +
+        return "HinhVuong{" +
                 "canh=" + canh +
-                ']';
+                '}';
     }
 }
