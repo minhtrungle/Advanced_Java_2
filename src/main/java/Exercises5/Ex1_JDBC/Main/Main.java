@@ -67,7 +67,6 @@ public class Main {
 
 
         productDAO.insertProduct(p);
-        System.out.println("Thêm sản phẩm thành công");
 
     }
 
@@ -107,7 +106,6 @@ public class Main {
         p.setBrandId(idbrand);
 
         productDAO.updateProduct(p, idSP);
-        System.out.println("Cập nhật sản phẩm thành công");
     }
 
     private static void option5() throws SQLException {
@@ -147,7 +145,6 @@ public class Main {
         b.setBrandAddress(diaChi);
 
         brandDAO.insertBrand(b);
-        System.out.println("Thêm hãng thành công");
 
     }
     private static void option9(Scanner input) throws SQLException {

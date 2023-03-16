@@ -2,6 +2,7 @@ package Exercises5.Ex1_JDBC.Dao;
 
 import Exercises5.Ex1_JDBC.Connection.MyConnection;
 import Exercises5.Ex1_JDBC.Model.Brand;
+import Exercises5.Ex1_JDBC.Model.Product;
 
 
 import java.sql.Connection;
@@ -65,6 +66,43 @@ public class BrandDAO {
         return null;
     }
 
+    public List<Product> getAllProductByBrand(int brandID) throws SQLException {
+        List<Product> productList = new ArrayList<>();
+        BrandDAO brandDAO = new BrandDAO();
+        Brand bra = brandDAO.getByID(brandID);
+        if (bra == null) {
+            throw new RuntimeException("Hãng không tồn tại!");
+        }
+        Connection conn = MyConnection.getConnection();
+        final String sql = "SELECT * FROM `products` WHERE `brand_id` = " + brandID;
+
+        try {
+
+            Statement sta = conn.createStatement();
+
+            ResultSet res = sta.executeQuery(sql);
+
+            while (res.next()) {
+                Product p = new Product();
+                p.setId(res.getInt("id"));
+                p.setProductName(res.getString("product_name"));
+                p.setProductPrice(res.getInt("product_price"));
+                p.setProductSize(res.getString("product_size"));
+                p.setProductColor(res.getString("product_color"));
+                p.setBrandId(brandID);
+
+                productList.add(p);
+            }
+            res.close();
+            sta.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return productList;
+
+
+    }
     public void insertBrand(Brand b) throws SQLException {
         Connection conn = MyConnection.getConnection();
 
